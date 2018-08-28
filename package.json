@@ -1,0 +1,24 @@
+{
+  "name": "react-ts",
+  "version": "1.0.0",
+  "description": "Trying out Typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "www.github.com/peterholmberg/react-typescript"
+  },
+  "author": "Peter Holmberg",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^1.14.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-hot-loader": "^4.3.5",
+    "typescript": "^3.0.1",
+    "webpack": "^4.17.1"
+  },
+  "dependencies": {}
+}
