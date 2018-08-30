@@ -15,7 +15,7 @@
     "prod": "NODE_ENV=production NODE_PATH=./public/app node --max_old_space_size=900 public/server/server",
     "test": "jest --config jest.config.json --coverage",
     "test:watch": "jest --config jest.config.json --watch",
-    "fix": "eslint --fix app/.; exit 0",
+    "fix": "eslint --fix app/.; exit 0"
   },
   "engines": {
     "node": "10.x",
