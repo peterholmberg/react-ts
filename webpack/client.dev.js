@@ -6,6 +6,7 @@ const BUILT_ASSETS_FOLDER = "/assets/";
 module.exports = {
   name: "client",
   target: "web",
+  mode: "development",
   devtool: "cheap-module-eval-source-map",
   entry: [
     "webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=false&quiet=false&noInfo=false",
@@ -22,16 +23,6 @@ module.exports = {
   module: {
     rules: [
       {
-        enforce: "pre",
-        test: /(?!.*\.test)\.(jsx|js)?$/,
-        loader: "eslint-loader",
-        exclude: /node_modules/,
-        options: {
-          failOnWarning: false,
-          failOnError: true
-        }
-      },
-      {
         test: /(?!.*\.test)\.(jsx|js)$/,
         exclude: [/node_modules/, /__tests__/],
         loader: "babel-loader"
@@ -46,7 +37,8 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
-              modules: false
+              modules: true,
+              localIdentName: "[name]__[local]-[hash:base64:5]"
             }
           },
           {
@@ -61,19 +53,14 @@ module.exports = {
   },
   resolve: {
     extensions: [".js", ".jsx", ".scss"],
-    modules: [path.join(__dirname, "../", "src", "app"), "node_modules"]
+    modules: [
+      path.join(__dirname, "../", "src", "app"),
+      "node_modules"
+    ]
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: "vendor",
-      filename: "[name].js",
-      minChunks: Infinity
-    }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.EnvironmentPlugin({
-      NODE_ENV: "development"
-    }),
     new webpack.LoaderOptionsPlugin({
       minimize: false
     })

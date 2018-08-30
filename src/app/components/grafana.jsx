@@ -5,7 +5,7 @@ export interface GraphanaProps {
   framework: string;
 }
 
-export default class Graphana extends PureComponent<GraphanaProps, {}> {
+export default class Grafana extends PureComponent<GraphanaProps, {}> {
   render() {
     return <h1>Graphana</h1>;
   }
