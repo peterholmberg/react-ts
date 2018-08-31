@@ -23,7 +23,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /(?!.*\.test)\.(jsx|js|tsx|ts)$/,
+        test: /(?!.*\.test)\.(js|tsx|ts)$/,
         exclude: [/node_modules/, /__tests__/],
         loader: "babel-loader"
       },
@@ -35,9 +35,10 @@ module.exports = {
             loader: "style-loader"
           },
           {
-            loader: "css-loader",
+            loader: "typings-for-scss-modules-loader",
             options: {
               modules: true,
+              namedExport: true,
               localIdentName: "[name]__[local]-[hash:base64:5]"
             }
           },

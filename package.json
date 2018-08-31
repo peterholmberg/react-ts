@@ -14,7 +14,7 @@
     "build": "node scripts/build",
     "prod": "NODE_ENV=production NODE_PATH=./public/app node --max_old_space_size=900 public/server/server",
     "test": "jest --config jest.config.json --coverage",
-    "test:watch": "jest --config jest.config.json --watch",
+    "test:watch": "jest --config jest.config.json --watch --coverage",
     "fix": "eslint --fix app/.; exit 0"
   },
   "engines": {
@@ -23,7 +23,9 @@
   },
   "dependencies": {
     "@types/classnames": "^2.2.6",
+    "@types/enzyme": "^3.1.13",
     "@types/history": "^4.7.0",
+    "@types/jest": "^23.3.1",
     "@types/react": "^16.4.13",
     "@types/react-dom": "^16.0.7",
     "@types/react-redux": "^6.0.6",
@@ -81,7 +83,10 @@
     "redux-thunk": "^2.3.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",
+    "ts-jest": "^23.1.4",
     "typescript": "^3.0.3",
+    "typings-for-css-modules-loader": "^1.7.0",
+    "typings-for-scss-modules-loader": "^1.5.1",
     "webpack": "~4.17.1",
     "webpack-bundle-analyzer": "^2.13.1",
     "webpack-dev-middleware": "^2.0.0",

@@ -1,18 +1,25 @@
 {
-  "moduleFileExtensions": [
-    "jsx",
-    "js"
-  ],
+  "globals": {
+    "ts-jest": {
+      "tsConfigFile": "tsconfig.json"
+    }
+  },
+  "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json"],
   "roots": ["src"],
   "modulePaths": ["src/app"],
-  "collectCoverageFrom" : ["src/**/*.jsx", "src/**/*.js", "!src/**/index.js", "!src/server/mock/**"],
+  "collectCoverageFrom": [
+    "src/**/*.tsx",
+    "src/**/*.ts",
+    "!src/**/index.ts",
+    "!src/server/mock/**"
+  ],
   "moduleDirectories": ["node_modules"],
   "moduleNameMapper": {
-    "\\.scss$": "<rootDir>/src/components/__mocks__/styleMock.js"
+    "\\.scss$": "<rootDir>/src/app/__mocks__/styleMock.ts"
+  },
+  "transform": {
+    "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
   },
   "snapshotSerializers": ["enzyme-to-json/serializer"],
-  "setupFiles": [
-    "./scripts/shim.js",
-    "./test-setup.js"
-  ]
+  "setupFiles": ["./scripts/shim.js", "./test-setup.ts"]
 }

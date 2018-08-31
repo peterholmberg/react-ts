@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
 import SideMenuTop from './components/sideMenuTop/SideMenuTop';
 import { collapseSideMenu, showSideMenu } from './actions';
 import { getCollapsed } from './selectors';
