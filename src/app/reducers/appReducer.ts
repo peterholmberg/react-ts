@@ -1,8 +1,9 @@
-import { fromJS } from "immutable";
+import { fromJS } from 'immutable';
 
 const defaultState = fromJS({
   networkFailed: false,
   networkProgress: false,
+  allurbaserbelongtous: 'Yes',
 });
 
 const appState = (state = defaultState, action = null) => {

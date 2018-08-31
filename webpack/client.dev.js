@@ -23,7 +23,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /(?!.*\.test)\.(jsx|js)$/,
+        test: /(?!.*\.test)\.(jsx|js|tsx|ts)$/,
         exclude: [/node_modules/, /__tests__/],
         loader: "babel-loader"
       },
@@ -52,7 +52,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: [".js", ".jsx", ".scss"],
+    extensions: [".js", ".tsx", ".ts", ".scss"],
     modules: [
       path.join(__dirname, "../", "src", "app"),
       "node_modules"
